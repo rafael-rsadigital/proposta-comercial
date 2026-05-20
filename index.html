@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSA Digital — Engenharia Web & SEO Local</title>
+    <title>Proposta Técnica — Cotta Beauty — Presença Digital</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -11,29 +11,36 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#f5f7ff',
-                            100: '#ebf0ff',
-                            200: '#d1dcff',
-                            300: '#a3bcff',
-                            400: '#6e91ff',
-                            500: '#3b5eff',
-                            600: '#253fff',
-                            700: '#1c2ee6',
-                            800: '#1725be',
-                            900: '#142099',
-                            950: '#0a0f4d',
+                        gold: {
+                            50: '#fbf8f3',
+                            100: '#f4ede0',
+                            200: '#e7d8be',
+                            300: '#d7be94',
+                            400: '#c5a06b',
+                            500: '#b4844a',
+                            600: '#a16d3b',
+                            700: '#865531',
+                            800: '#6d442a',
+                            900: '#593824',
+                            950: '#321e13',
                         },
-                        neon: {
-                            cyan: '#00f2fe',
-                            blue: '#4facfe',
-                            purple: '#7f00ff'
-                        },
-                        darkBg: '#090a0f',
-                        cardBg: '#11131e'
+                        zinc: {
+                            50: '#f9f9fb',
+                            100: '#f4f4f7',
+                            200: '#e4e4e9',
+                            300: '#d4d4dc',
+                            400: '#a1a1aa',
+                            500: '#71717a',
+                            600: '#52525b',
+                            700: '#3f3f46',
+                            800: '#27272a',
+                            900: '#18181b',
+                            950: '#09090b',
+                        }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
@@ -41,178 +48,532 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght=0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #090a0f;
-            color: #f4f4f7;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(59, 94, 255, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(0, 242, 254, 0.05) 0%, transparent 40%);
+            background-color: #f4f4f7;
+            color: #18181b;
         }
-        .glass-card {
-            background: rgba(17, 19, 30, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Estilo de página de relatório impressa */
+        .document-page {
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e4e4e9;
+        }
+        /* Linhas finas do organograma */
+        .org-line {
+            background-color: #c5a06b;
+        }
+        
+        /* Barra de rolagem horizontal fixa e visível para a tabela e diagramas no mobile */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+            display: block;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #e4e4e9;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c5a06b;
+            border-radius: 4px;
+            border: 2px solid #e4e4e9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #a16d3b;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+<body class="py-8 px-4 sm:px-6 lg:px-8 selection:bg-gold-200 selection:text-gold-900 relative">
 
-    <!-- Barra de Navegação -->
-    <header class="sticky top-0 z-40 w-full glass-card border-b border-zinc-800/60 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <!-- Logotipo RSA Digital -->
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-brand-600 to-neon-cyan flex items-center justify-center shadow-lg shadow-brand-500/10">
-                    <span class="text-white font-extrabold text-lg tracking-wider">RSA</span>
+    <!-- Container do Documento Geral -->
+    <div class="max-w-4xl mx-auto space-y-8">
+        
+        <!-- Cabeçalho do Documento (Visual de Ofício / Relatório Executivo) -->
+        <header class="document-page p-6 sm:p-8 rounded-lg flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded bg-zinc-900 flex items-center justify-center text-gold-400 font-serif font-bold text-xl shadow">
+                    CB
                 </div>
                 <div>
-                    <span class="text-white font-bold tracking-wider text-base block font-mono">RSA DIGITAL</span>
-                    <span class="text-[10px] text-neon-cyan font-semibold tracking-widest uppercase font-mono">Estratégia & Tecnologia</span>
+                    <span class="text-xs font-mono tracking-widest text-gold-600 uppercase block font-semibold">Documento Oficial</span>
+                    <h1 class="serif-title text-xl sm:text-2xl font-bold text-zinc-900">Proposta de Arquitetura Web & SEO</h1>
+                    <p class="text-xs text-zinc-500">Preparado para: <strong class="text-zinc-800">Cotta Beauty</strong></p>
                 </div>
             </div>
-            
-            <div class="text-[11px] font-mono text-zinc-500">
-                PROPOSTAS & AMBIENTES PRIVADOS
+            <div class="text-left sm:text-right font-mono text-xs text-zinc-500 space-y-1 border-t sm:border-t-0 pt-3 sm:pt-0 w-full sm:w-auto">
+                <div><span class="font-semibold text-zinc-700">Responsável:</span> Rafael - Estratégia Digital</div>
+                <div><span class="font-semibold text-zinc-700">Data de Emissão:</span> 20/05/2026</div>
+                <div><span class="font-semibold text-zinc-700">Validade:</span> 15 dias</div>
+            </div>
+        </header>
+
+        <!-- Sumário Executivo Inicial -->
+        <section class="document-page p-6 sm:p-8 rounded-lg space-y-4">
+            <h2 class="text-xs font-mono tracking-widest text-gold-600 uppercase font-bold border-b border-zinc-200 pb-2">1. Escopo & Objetivo Comercial</h2>
+            <p class="text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                Este planejamento estratégico visa o desenvolvimento do novo ecossistema web da <strong class="text-zinc-900">Cotta Beauty</strong>. Faremos um modelo focado no posicionamento e conversão de clientes de alto padrão para procedimentos estéticos específicos (como Harmonização Facial, Corporal e Estética Íntima Masculina). 
+            </p>
+            <p class="text-zinc-700 text-xs sm:text-sm leading-relaxed">
+                Nossa prioridade técnica é garantir que a clínica se destaque no Google nas buscas locais e por bairro em praças altamente concorridas: <strong class="text-zinc-900">Mogi das Cruzes, Vila Olímpia e Higienópolis</strong>.
+            </p>
+            <div class="bg-zinc-50 border-l-4 border-gold-400 p-3 rounded text-xs text-zinc-600">
+                <strong class="text-zinc-800 block mb-1">Diferencial Técnico Garantido:</strong>
+                O recurso de <strong>Schema Markup Local</strong> (estruturação de dados ricos do Google para exibir telefone, mapa e especialidades da Cotta Beauty) está integrado em 100% dos modelos propostos, garantindo o melhor indexamento inicial de partida.
+            </div>
+        </section>
+
+        <!-- Seção de Arquitetura e Fluxogramas Sequenciais (Rolagem Vertical Sem Clique) -->
+        <section class="document-page p-6 sm:p-8 rounded-lg space-y-6">
+            <div class="border-b border-zinc-200 pb-4">
+                <span class="text-xs font-mono tracking-widest text-gold-600 uppercase font-bold block mb-1">2. Arquitetura de Informações</span>
+                <h2 class="serif-title text-xl sm:text-2xl font-bold text-zinc-900">Mapeamento das Estruturas Sugeridas</h2>
+                <p class="text-zinc-500 text-xs mt-1">Explore abaixo os fluxogramas estruturais de cada nível de investimento e veja como o fluxo de usuários e do Google se comporta em cada opção.</p>
+            </div>
+
+            <!-- Fluxogramas Empilhados sequencialmente -->
+            <div class="space-y-10">
+                
+                <!-- PROPOSTA 1: ONE PAGE -->
+                <div class="bg-zinc-50 border border-zinc-200 rounded-xl p-4 sm:p-6 space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-zinc-200 pb-3 gap-2">
+                        <div>
+                            <span class="text-[9px] bg-zinc-200 text-zinc-700 font-mono px-2 py-0.5 rounded uppercase font-semibold">Estrutura Simplificada</span>
+                            <h3 class="text-sm font-bold text-zinc-900 mt-1">Opção 1: One Page (Página Única)</h3>
+                        </div>
+                        <span class="text-xs text-zinc-500 font-mono">Modelo Compacto</span>
+                    </div>
+                    <p class="text-xs text-zinc-600 leading-relaxed">
+                        Toda a experiência de conversão concentrada em uma única página longa. Ideal para buscas institucionais diretas pelo nome da clínica na localidade de Mogi das Cruzes.
+                    </p>
+
+                    <!-- Organograma One Page -->
+                    <div class="flex flex-col items-center py-4 bg-white rounded-lg border border-zinc-200 shadow-sm">
+                        <div class="p-3 bg-zinc-900 text-white rounded shadow text-xs font-mono font-semibold min-w-[180px] text-center border border-zinc-800">
+                            Home Page Principal (/)
+                        </div>
+                        <div class="w-0.5 h-6 org-line"></div>
+                        <div class="border border-gold-300 bg-zinc-50/50 p-4 rounded-lg text-xs space-y-2 w-full max-w-md text-zinc-700">
+                            <span class="block font-bold text-center border-b border-zinc-200 pb-1 text-[10px] uppercase text-gold-600">Seções Carregadas em Scroll Único</span>
+                            <div class="grid grid-cols-2 gap-2 text-[10px] font-mono">
+                                <div class="bg-white p-2 rounded border border-zinc-200 text-center">• Seção 1: Apresentação</div>
+                                <div class="bg-white p-2 rounded border border-zinc-200 text-center">• Seção 2: Sobre a Clínica</div>
+                                <div class="bg-white p-2 rounded border border-zinc-200 text-center">• Seção 3: Serviços Gerais</div>
+                                <div class="bg-white p-2 rounded border border-zinc-200 text-center">• Seção 4: Galeria de Fotos</div>
+                                <div class="bg-white p-2 rounded border border-zinc-200 text-center">• Seção 5: Localização Mogi</div>
+                                <div class="bg-white p-2 rounded border border-zinc-200 text-center">• Seção 6: Botão Contato</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROPOSTA 2: INTERMEDIÁRIO -->
+                <div class="bg-zinc-50 border border-zinc-200 rounded-xl p-4 sm:p-6 space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-zinc-200 pb-3 gap-2">
+                        <div>
+                            <span class="text-[9px] bg-zinc-200 text-zinc-700 font-mono px-2 py-0.5 rounded uppercase font-semibold">Estrutura Expandida</span>
+                            <h3 class="text-sm font-bold text-zinc-900 mt-1">Opção 2: Intermediário (Localidades + Blog)</h3>
+                        </div>
+                        <span class="text-xs text-zinc-500 font-mono">Multi-Regiões (Mogi, Vila Olímpia, Higienópolis)</span>
+                    </div>
+                    <p class="text-xs text-zinc-600 leading-relaxed">
+                        Cria páginas dedicadas para cada bairro/cidade atendido para que o Google indexe a Cotta Beauty de forma isolada em cada localização física, somado ao suporte de um blog com 3 artigos iniciais para gerar relevância técnica.
+                    </p>
+
+                    <!-- Organograma Intermediário Corrigido (Camada de Rolagem Externa Sem Corte) -->
+                    <div class="overflow-x-auto w-full custom-scrollbar border border-zinc-200 rounded-lg bg-white shadow-sm">
+                        <div class="min-w-[550px] p-6 flex flex-col items-center">
+                            <div class="p-3 bg-zinc-900 text-white rounded shadow text-xs font-mono font-semibold min-w-[200px] text-center border border-zinc-800">
+                                Home Page (/) <br>
+                                <span class="text-[9px] text-gold-300 font-normal">Institucional Cotta Beauty</span>
+                            </div>
+                            
+                            <div class="w-0.5 h-6 org-line"></div>
+                            
+                            <!-- Linha Horizontal de Divisão -->
+                            <div class="w-4/5 h-0.5 bg-gold-300"></div>
+                            
+                            <!-- Colunas filhas -->
+                            <div class="grid grid-cols-4 gap-2 w-full pt-4">
+                                <div class="flex flex-col items-center">
+                                    <div class="p-2 bg-zinc-50 border border-zinc-300 rounded text-[10px] text-center font-mono w-full shadow-sm">
+                                        <span class="font-bold text-zinc-800 block">Mogi das Cruzes</span>
+                                        <span class="text-[8px] text-zinc-400">/mogi-das-cruzes</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="p-2 bg-zinc-50 border border-zinc-300 rounded text-[10px] text-center font-mono w-full shadow-sm">
+                                        <span class="font-bold text-zinc-800 block">Vila Olímpia</span>
+                                        <span class="text-[8px] text-zinc-400">/vila-olimpia</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="p-2 bg-zinc-50 border border-zinc-300 rounded text-[10px] text-center font-mono w-full shadow-sm">
+                                        <span class="font-bold text-zinc-800 block">Higienópolis</span>
+                                        <span class="text-[8px] text-zinc-400">/higienopolis</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="p-2 bg-gold-50 border border-gold-300 rounded text-[10px] text-center font-mono w-full shadow-sm">
+                                        <span class="font-bold text-gold-800 block">Blog Ativo</span>
+                                        <span class="text-[8px] text-gold-600">3 Artigos inclusos</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Rodapé do organograma intermediário -->
+                            <div class="w-0.5 h-6 org-line mt-4"></div>
+                            <div class="p-2.5 bg-gold-100/30 border border-gold-300/40 rounded text-center text-[11px] text-zinc-700 w-full max-w-xs">
+                                <strong>Página Geral de Serviços (/servicos):</strong> <br>
+                                Uma única página listando de forma compacta os tratamentos estéticos.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROPOSTA 3: ROBUSTO -->
+                <div class="bg-zinc-50 border border-zinc-200 rounded-xl p-4 sm:p-6 space-y-4">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-zinc-200 pb-3 gap-2">
+                        <div>
+                            <span class="text-[9px] bg-gold-400 text-charcoal-950 font-mono px-2 py-0.5 rounded uppercase font-bold">Máximo Desempenho Orgânico</span>
+                            <h3 class="text-sm font-bold text-zinc-900 mt-1">Opção 3: Robusto (Mapeamento Total de Palavras-Chave)</h3>
+                        </div>
+                        <span class="text-xs text-gold-600 font-mono font-bold">Otimização Premium</span>
+                    </div>
+                    <p class="text-xs text-zinc-600 leading-relaxed">
+                        A engenharia definitiva de SEO. Cria um ecossistema com até 15 páginas internas para ranquear palavras específicas de alto valor (como <em>Botox</em>, <em>Estética Íntima</em>, <em>Harmonização Facial</em>) cruzando com cada região de interesse, além de acompanhamento e produção de 1 novo post mensal no blog para manutenção do topo do Google.
+                    </p>
+
+                    <!-- Organograma Robusto Corrigido (Camada de Rolagem Externa Sem Corte) -->
+                    <div class="overflow-x-auto w-full custom-scrollbar border border-zinc-200 rounded-lg bg-white shadow-sm">
+                        <div class="min-w-[620px] p-6 flex flex-col items-center">
+                            <div class="p-3 bg-zinc-900 text-white rounded shadow text-xs font-mono font-semibold min-w-[220px] text-center border border-zinc-800">
+                                Home Page (/) — Cotta Beauty
+                            </div>
+                            
+                            <div class="w-0.5 h-4 org-line"></div>
+                            <div class="w-11/12 h-0.5 bg-gold-300"></div>
+                            
+                            <!-- 3 Grandes Ramos -->
+                            <div class="grid grid-cols-3 gap-2 w-full pt-2">
+                                
+                                <!-- Ramo 1: Páginas Base -->
+                                <div class="bg-zinc-50 p-2 rounded border border-zinc-200 space-y-1">
+                                    <span class="block text-[8px] font-bold text-zinc-400 uppercase text-center border-b pb-1">1. Páginas Menu</span>
+                                    <div class="text-[9px] font-mono text-zinc-600 space-y-1">
+                                        <div class="bg-white p-1 text-center border rounded">/servicos</div>
+                                        <div class="bg-white p-1 text-center border rounded">/galeria</div>
+                                        <div class="bg-white p-1 text-center border rounded">/contato</div>
+                                        <div class="bg-gold-50/50 p-1 text-center border border-gold-200 rounded font-semibold text-gold-900">/blog <span class="text-[7px] text-gold-700 block">(3 Artigos + 1 Post/Mês)</span></div>
+                                    </div>
+                                </div>
+
+                                <!-- Ramo 2: Landing Pages de Localização -->
+                                <div class="bg-zinc-50 p-2 rounded border border-zinc-200 space-y-1">
+                                    <span class="block text-[8px] font-bold text-emerald-600 uppercase text-center border-b pb-1">2. Alvos Geográficos</span>
+                                    <div class="text-[9px] font-mono text-zinc-600 space-y-1">
+                                        <div class="bg-white p-1 text-center border border-emerald-200 rounded">/mogi-das-cruzes</div>
+                                        <div class="bg-white p-1 text-center border border-emerald-200 rounded">/vila-olimpia</div>
+                                        <div class="bg-white p-1 text-center border border-emerald-200 rounded">/higienopolis</div>
+                                    </div>
+                                </div>
+
+                                <!-- Ramo 3: Landing Pages por Procedimento -->
+                                <div class="bg-zinc-50 p-2 rounded border border-zinc-200 space-y-1">
+                                    <span class="block text-[8px] font-bold text-gold-600 uppercase text-center border-b pb-1">3. Palavras-Chave (Serviços)</span>
+                                    <div class="text-[9px] font-mono text-zinc-600 space-y-1">
+                                        <div class="bg-white p-1 text-center border border-gold-200 rounded">/estetica-intima-masculina</div>
+                                        <div class="bg-white p-1 text-center border border-gold-200 rounded">/harmonizacao-facial-masculina</div>
+                                        <div class="bg-white p-1 text-center border border-gold-200 rounded">/harmonizacao-corporal-masculina</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Área de SEO Cruzado (O Cruzamento Inteligente) -->
+                            <div class="w-0.5 h-6 org-line mt-4"></div>
+                            <div class="p-3 bg-gold-50/50 border border-gold-300 rounded-lg w-full">
+                                <span class="block text-center text-[9px] font-mono font-bold uppercase text-gold-700 tracking-wider mb-2">4. Cruzamento de Busca Orgânica (SEO Cruzado)</span>
+                                <div class="grid grid-cols-4 gap-2 text-[9px] font-mono text-center">
+                                    <div class="bg-white p-2 rounded border border-gold-200 shadow-sm">
+                                        <strong class="text-zinc-800 block text-[9px]">Estética Íntima</strong>
+                                        <span class="text-gold-600 font-bold">+</span>
+                                        <span class="text-zinc-500 block">Mogi das Cruzes</span>
+                                    </div>
+                                    <div class="bg-white p-2 rounded border border-gold-200 shadow-sm">
+                                        <strong class="text-zinc-800 block text-[9px]">Estética Íntima</strong>
+                                        <span class="text-gold-600 font-bold">+</span>
+                                        <span class="text-zinc-500 block">Vila Olímpia</span>
+                                    </div>
+                                    <div class="bg-white p-2 rounded border border-gold-200 shadow-sm">
+                                        <strong class="text-zinc-800 block text-[9px]">Harmonização Facial</strong>
+                                        <span class="text-gold-600 font-bold">+</span>
+                                        <span class="text-zinc-500 block">Mogi das Cruzes</span>
+                                    </div>
+                                    <div class="bg-white p-2 rounded border border-gold-200 shadow-sm">
+                                        <strong class="text-zinc-800 block text-[9px]">Harmonização Facial</strong>
+                                        <span class="text-gold-600 font-bold">+</span>
+                                        <span class="text-zinc-500 block">Vila Olímpia</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Seção 3: Planos e Investimento -->
+        <section id="planos" class="document-page p-6 sm:p-8 rounded-lg space-y-6">
+            <div class="border-b border-zinc-200 pb-4">
+                <span class="text-xs font-mono tracking-widest text-gold-600 uppercase font-bold block mb-1">3. Planos & Investimentos</span>
+                <h2 class="serif-title text-xl sm:text-2xl font-bold text-zinc-900">Tabela de Opções Estruturais</h2>
+                <p class="text-zinc-500 text-xs mt-1">Valores únicos sem taxas de manutenção mensais recorrentes da agência.</p>
+            </div>
+
+            <!-- Alerta visual de arrastar para o lado no mobile (Apenas em telas pequenas) -->
+            <div class="flex items-center justify-center gap-2 text-[11px] font-bold text-gold-700 bg-gold-100/50 border border-gold-200 py-2 px-3 rounded md:hidden animate-pulse">
+                <span>↔</span>
+                <span>Arraste para o lado para ver todos os planos</span>
+                <span>↔</span>
+            </div>
+
+            <!-- Tabela Comparativa Estilo Documento com rolagem personalizada e fixa -->
+            <div class="overflow-x-auto custom-scrollbar pb-4">
+                <table class="w-full text-left text-xs border-collapse min-w-[650px]">
+                    <thead>
+                        <tr class="bg-zinc-100 text-zinc-700 font-mono border-b border-zinc-300">
+                            <th class="p-3">Recurso / Entrega</th>
+                            <th class="p-3 text-center">01. One Page (Essencial)</th>
+                            <th class="p-3 text-center">02. Intermediário</th>
+                            <th class="p-3 text-center bg-gold-50 text-gold-900 font-bold border-x border-gold-300">03. Robusto (Recomendado)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-zinc-200 text-zinc-700">
+                        <tr>
+                            <td class="p-3 font-medium text-zinc-900">Total de Páginas</td>
+                            <td class="p-3 text-center text-zinc-500">Página Única (Scroll)</td>
+                            <td class="p-3 text-center">Home + 5 Páginas</td>
+                            <td class="p-3 text-center bg-gold-50/50 font-semibold text-zinc-900 border-x border-gold-200">Até 15 Páginas Completas</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium text-zinc-900">Cobertura Regional</td>
+                            <td class="p-3 text-center">Apenas Mogi das Cruzes</td>
+                            <td class="p-3 text-center">Mogi, Vila Olímpia e Higienópolis</td>
+                            <td class="p-3 text-center bg-gold-50/50 font-semibold text-zinc-900 border-x border-gold-200">Mogi, Vila Olímpia e Higienópolis</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium text-zinc-900">Otimização de Termos (Keywords)</td>
+                            <td class="p-3 text-center text-zinc-400">Não possui</td>
+                            <td class="p-3 text-center">Geral por cidade</td>
+                            <td class="p-3 text-center bg-gold-50/50 font-semibold text-zinc-900 border-x border-gold-200">Mapeamento Individual (Botox, Injetáveis, etc.)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium text-zinc-900">SEO Cruzado (Serviço + Localidade)</td>
+                            <td class="p-3 text-center text-zinc-400">Não possui</td>
+                            <td class="p-3 text-center text-zinc-400">Não possui</td>
+                            <td class="p-3 text-center bg-gold-50/50 font-semibold text-zinc-900 border-x border-gold-200">Sim (Totalmente Otimizado)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium text-zinc-900">Schema Markup Local (Google)</td>
+                            <td class="p-3 text-center text-emerald-600 font-semibold">✓ Incluso</td>
+                            <td class="p-3 text-center text-emerald-600 font-semibold">✓ Incluso</td>
+                            <td class="p-3 text-center bg-gold-50/50 text-emerald-600 font-semibold border-x border-gold-200">✓ Incluso (Avançado)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-medium text-zinc-900">Artigos de Autoridade (Blog)</td>
+                            <td class="p-3 text-center text-zinc-400">Não possui</td>
+                            <td class="p-3 text-center text-emerald-600">✓ 3 Artigos inclusos</td>
+                            <td class="p-3 text-center bg-gold-50/50 font-semibold text-zinc-900 border-x border-gold-200">3 Artigos Iniciais + 1 Post/Mês</td>
+                        </tr>
+                        <tr class="bg-zinc-50/50">
+                            <td class="p-3 font-bold text-zinc-900">VALOR ÚNICO</td>
+                            <td class="p-3 text-center text-zinc-900 font-bold">R$ 1.100</td>
+                            <td class="p-3 text-center text-zinc-900 font-bold">R$ 1.800</td>
+                            <td class="p-3 text-center bg-gold-100 text-gold-950 font-bold border-x border-gold-400 text-sm">R$ 2.800</td>
+                        </tr>
+                        <tr class="bg-zinc-50/50">
+                            <td class="p-3 font-medium text-zinc-600">Parcelamento no Cartão</td>
+                            <td class="p-3 text-center text-[11px] font-mono">12x de R$ 91,66</td>
+                            <td class="p-3 text-center text-[11px] font-mono">12x de R$ 150</td>
+                            <td class="p-3 text-center bg-gold-50/50 text-[11px] font-mono border-x border-gold-200">12x de R$ 233</td>
+                        </tr>
+                        <tr class="bg-zinc-50/50">
+                            <td class="p-3 font-medium text-zinc-600">Parcelamento no Boleto</td>
+                            <td class="p-3 text-center text-[11px] font-mono">2x de R$ 550</td>
+                            <td class="p-3 text-center text-[11px] font-mono">3x de R$ 600</td>
+                            <td class="p-3 text-center bg-gold-50/50 text-[11px] font-mono border-x border-gold-200">3x de R$ 933</td>
+                        </tr>
+                        <tr class="bg-zinc-100/50">
+                            <td class="p-3 font-medium text-zinc-700">Ação de Contratação</td>
+                            <td class="p-3 text-center">
+                                <a href="https://wa.me/5512982653409?text=Olá,%20Rafael!%20Li%20a%20proposta%20e%20gostaria%20de%20iniciar%20o%20Plano%201:%20One%20Page%20(R$%201.100)%20para%20a%20Cotta%20Beauty." target="_blank" class="inline-block bg-zinc-800 hover:bg-zinc-700 text-white font-mono text-[10px] px-2.5 py-1.5 rounded transition-all">Contratar Plano 1</a>
+                            </td>
+                            <td class="p-3 text-center">
+                                <a href="https://wa.me/5512982653409?text=Olá,%20Rafael!%20Li%20a%20proposta%20e%20gostaria%20de%20iniciar%20o%20Plano%202:%20Intermediário%20(R$%201.800)%20para%20a%20Cotta%20Beauty." target="_blank" class="inline-block bg-zinc-800 hover:bg-zinc-700 text-white font-mono text-[10px] px-2.5 py-1.5 rounded transition-all">Contratar Plano 2</a>
+                            </td>
+                            <td class="p-3 text-center bg-gold-50/50 border-x border-gold-200">
+                                <a href="https://wa.me/5512982653409?text=Olá,%20Rafael!%20Li%20a%20proposta%20e%20gostaria%20de%20iniciar%20o%20Plano%203:%20Robusto%20(R$%202.800)%20para%20a%20Cotta%20Beauty." target="_blank" class="inline-block bg-gold-600 hover:bg-gold-500 text-white font-mono text-[10px] px-2.5 py-1.5 rounded transition-all font-bold">Contratar Plano 3</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Condições Gerais -->
+            <div class="pt-4 border-t border-zinc-200 text-xs text-zinc-500 space-y-1">
+                <div>• <strong class="text-zinc-700">Manutenção Grátis:</strong> Hospedagem profissional e registro do domínio oficial inclusos integralmente no primeiro ano de contrato de todos os planos.</div>
+                <div>• <strong class="text-zinc-700">Forma de Início:</strong> Desenvolvimento iniciado mediante assinatura do contrato eletrônico e envio de briefing inicial.</div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Glossário Técnico Explicativo -->
+        <section class="document-page p-6 sm:p-8 rounded-lg space-y-6">
+            <div class="border-b border-zinc-200 pb-4">
+                <span class="text-xs font-mono tracking-widest text-gold-600 uppercase font-bold block mb-1">4. Termos Explicativos</span>
+                <h2 class="serif-title text-xl sm:text-2xl font-bold text-zinc-900">Glossário de Apoio Decisório</h2>
+                <p class="text-zinc-500 text-xs mt-1">Entenda o papel técnico de cada tecnologia e recurso listado nesta proposta comercial para a Cotta Beauty.</p>
+            </div>
+
+            <!-- Lista Dinâmica do Glossário -->
+            <div class="space-y-4">
+                
+                <div class="border-b border-zinc-100 pb-3">
+                    <h3 class="text-xs font-bold text-zinc-800 uppercase tracking-wider mb-1">Schema Markup Local</h3>
+                    <p class="text-xs text-zinc-600 leading-relaxed">
+                        É um conjunto de códigos de estruturação inseridos nos arquivos de todos os planos de site sugeridos. Ele serve para dizer diretamente aos robôs do Google detalhes importantes da clínica (endereço físico, especialidades, telefone e horário de funcionamento). Facilita o ranqueamento orgânico geográfico e o destaque no mapa da região.
+                    </p>
+                </div>
+
+                <div class="border-b border-zinc-100 pb-3">
+                    <h3 class="text-xs font-bold text-zinc-800 uppercase tracking-wider mb-1">SEO Cruzado (Serviço + Localidade)</h3>
+                    <p class="text-xs text-zinc-600 leading-relaxed">
+                        É uma engenharia avançada de indexação onde criamos páginas exclusivas combinando o tratamento médico/estético com a praça local. Quando o seu potencial cliente busca por <em>"harmonização facial na Vila Olímpia"</em>, o Google não exibe o site geral da sua clínica, ele aponta diretamente para essa página de destino ultra-específica, reduzindo a concorrência e aumentando a taxa de fechamentos de agendamentos.
+                    </p>
+                </div>
+
+                <div class="border-b border-zinc-100 pb-3">
+                    <h3 class="text-xs font-bold text-zinc-800 uppercase tracking-wider mb-1">Landing Pages por Bairro</h3>
+                    <p class="text-xs text-zinc-600 leading-relaxed">
+                        Páginas independentes do ecossistema principal focadas em convencer o visitante local a tomar uma ação imediata. Contém cabeçalho direto, exibição dos profissionais, localização próxima e botões de contato específicos.
+                    </p>
+                </div>
+
+                <div class="border-b border-zinc-100 pb-3">
+                    <h3 class="text-xs font-bold text-zinc-800 uppercase tracking-wider mb-1">Google Search Console</h3>
+                    <p class="text-xs text-zinc-600 leading-relaxed">
+                        Painel técnico do próprio Google onde vinculamos o site para monitorar quais palavras-chave estão trazendo usuários qualificados para a clínica e gerando cliques. Permite identificar oportunidades de novos tratamentos no blog.
+                    </p>
+                </div>
+
+                <div class="border-b border-zinc-100 pb-3">
+                    <h3 class="text-xs font-bold text-zinc-800 uppercase tracking-wider mb-1">Blog de Autoridade & Artigos Semanais/Mensais</h3>
+                    <p class="text-xs text-zinc-600 leading-relaxed">
+                        Espaço de publicação de artigos com forte valor pedagógico clínico. Ele é peça-chave para tirar dúvidas recorrentes sobre harmonização corporal, botox ou estética íntima. No plano robusto, a inclusão de uma nova publicação por mês atua diretamente como pilar de atualização contínua, fazendo com que o robô de indexação do Google visite e priorize o seu domínio com maior constância.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Seção 5: Aceite e Contato Comercial -->
+        <section class="document-page p-6 sm:p-8 rounded-lg flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+            <div class="space-y-1">
+                <span class="text-xs font-mono tracking-widest text-gold-600 uppercase font-bold block">Próximo Passo</span>
+                <h2 class="serif-title text-lg font-bold text-zinc-900">Gostaria de fechar o projeto?</h2>
+                <p class="text-zinc-500 text-xs">Fale diretamente comigo para o alinhamento de contrato e início das atividades.</p>
+            </div>
+            <!-- Botão para abrir o Modal de Opções -->
+            <button onclick="abrirModal()" class="bg-zinc-900 hover:bg-zinc-800 text-gold-300 hover:text-white font-mono text-xs font-bold px-6 py-3 rounded tracking-wider shadow transition-all shrink-0 w-full sm:w-auto text-center border border-zinc-800">
+                Iniciar Projeto
+            </button>
+        </section>
+
+    </div>
+
+    <!-- MODAL DE SELEÇÃO DE PLANO (Interativo & Elegante) -->
+    <div id="modal-planos" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/80 backdrop-blur-sm hidden transition-all duration-300">
+        <div class="bg-white rounded-xl border border-zinc-200 w-full max-w-lg p-6 shadow-2xl relative">
+            <!-- Botão de Fechar Modal -->
+            <button onclick="fecharModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-zinc-600 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <span class="text-[10px] font-mono tracking-widest text-gold-600 uppercase font-bold block mb-1">Ação Comercial</span>
+            <h3 class="serif-title text-xl font-bold text-zinc-900 mb-2">Selecione o plano ideal para a Cotta Beauty:</h3>
+            <p class="text-xs text-zinc-500 mb-6">Ao clicar em uma das opções abaixo, você será redirecionado para conversar comigo diretamente no WhatsApp com a mensagem pré-configurada.</p>
+
+            <div class="space-y-3">
+                <!-- Opção 1 -->
+                <button onclick="irParaWhatsApp('onepage')" class="w-full p-4 rounded-lg border border-zinc-200 hover:border-gold-400 bg-zinc-50 hover:bg-gold-50/20 text-left transition-all flex justify-between items-center group">
+                    <div>
+                        <span class="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider block">OPÇÃO 01</span>
+                        <span class="text-sm font-bold text-zinc-800 group-hover:text-gold-700">Plano 1: One Page (Página Única)</span>
+                        <span class="block text-xs text-zinc-500 font-mono mt-1">Investimento Único: R$ 1.100</span>
+                    </div>
+                    <span class="text-xs text-gold-600 font-bold group-hover:translate-x-1 transition-transform">Escolher &rarr;</span>
+                </button>
+
+                <!-- Opção 2 -->
+                <button onclick="irParaWhatsApp('intermediario')" class="w-full p-4 rounded-lg border border-zinc-200 hover:border-gold-400 bg-zinc-50 hover:bg-gold-50/20 text-left transition-all flex justify-between items-center group">
+                    <div>
+                        <span class="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider block">OPÇÃO 02</span>
+                        <span class="text-sm font-bold text-zinc-800 group-hover:text-gold-700">Plano 2: Intermediário (Localidades + Blog)</span>
+                        <span class="block text-xs text-zinc-500 font-mono mt-1">Investimento Único: R$ 1.800</span>
+                    </div>
+                    <span class="text-xs text-gold-600 font-bold group-hover:translate-x-1 transition-transform">Escolher &rarr;</span>
+                </button>
+
+                <!-- Opção 3 -->
+                <button onclick="irParaWhatsApp('robusto')" class="w-full p-4 rounded-lg border-2 border-gold-300 hover:border-gold-400 bg-gold-50/30 hover:bg-gold-50/50 text-left transition-all flex justify-between items-center group">
+                    <div>
+                        <span class="text-xs font-mono font-bold text-gold-600 uppercase tracking-wider block">RECOMENDADO</span>
+                        <span class="text-sm font-bold text-zinc-900 group-hover:text-gold-800">Plano 3: Robusto (Mapeamento Total de Palavras-Chave)</span>
+                        <span class="block text-xs text-zinc-500 font-mono mt-1">Investimento Único: R$ 2.800</span>
+                    </div>
+                    <span class="text-xs text-gold-600 font-bold group-hover:translate-x-1 transition-transform">Escolher &rarr;</span>
+                </button>
             </div>
         </div>
-    </header>
+    </div>
 
-    <!-- Conteúdo Principal -->
-    <main class="max-w-6xl w-full mx-auto px-4 py-16 space-y-20 flex-grow">
+    <!-- Script de Gestão Dinâmica dos Fluxogramas & Modal -->
+    <script>
+        // Funções para abrir/fechar o Modal de Opções de Planos
+        function abrirModal() {
+            const modal = document.getElementById('modal-planos');
+            modal.classList.remove('hidden');
+        }
 
-        <!-- Seção Hero Simplificada e Corporativa -->
-        <section class="text-center max-w-3xl mx-auto space-y-6 py-8">
-            <span class="bg-brand-500/10 text-brand-400 border border-brand-500/20 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase inline-block font-mono">
-                Ambiente de Servidores Estáticos
-            </span>
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                Infraestrutura & Projetos de <span class="bg-gradient-to-r from-brand-400 via-neon-cyan to-neon-blue bg-clip-text text-transparent">Alta Performance</span>
-            </h1>
-            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
-                Este domínio é utilizado exclusivamente para a hospedagem, validação de arquivos e disponibilização de propostas comerciais personalizadas desenvolvidas pela equipe de engenharia da <strong class="text-zinc-200">RSA Digital</strong>.
-            </p>
-        </section>
+        function fecharModal() {
+            const modal = document.getElementById('modal-planos');
+            modal.classList.add('hidden');
+        }
 
-        <!-- Seção: Opções de Arquiteturas de Sites (Sem Preços, Sem CTAs) -->
-        <section class="space-y-8">
-            <div class="text-center max-w-2xl mx-auto space-y-2">
-                <span class="text-xs font-mono tracking-widest text-brand-400 uppercase font-bold">Nossas Arquiteturas</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Modelos Estruturais de Sites</h2>
-                <p class="text-zinc-400 text-xs sm:text-sm">Desenvolvemos três padrões de layouts planejados para a melhor distribuição de informações e SEO.</p>
-            </div>
+        // Função para redirecionar para o WhatsApp com mensagens personalizadas
+        function irParaWhatsApp(plano) {
+            const telefone = "5512982653409";
+            let message = "";
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Modelo 1: One Page -->
-                <div class="glass-card p-6 rounded-xl border border-zinc-800 space-y-4">
-                    <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">Estrutura 01</span>
-                    <h3 class="text-base font-bold text-white">One Page (Página Única)</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">
-                        Toda a experiência de conversão, informações institucionais, galeria e contato concentrados em uma única página longa com carregamento sequencial. Ideal para validação de serviços em uma única região geográfica.
-                    </p>
-                    <ul class="text-[11px] text-zinc-500 space-y-2 font-mono border-t border-zinc-800/60 pt-4">
-                        <li>• Navegação integrada por âncoras</li>
-                        <li>• Seção de conversão e contato unificada</li>
-                        <li>• Ideal para campanhas de tráfego direto</li>
-                    </ul>
-                </div>
+            if (plano === 'onepage') {
+                message = "Olá, Rafael! Analisei a proposta do site da Cotta Beauty e decidi escolher o Plano 1: One Page (R$ 1.100). Gostaria de alinhar os próximos passos!";
+            } else if (plano === 'intermediario') {
+                message = "Olá, Rafael! Analisei a proposta do site da Cotta Beauty e decidi escolher o Plano 2: Intermediário (R$ 1.800). Gostaria de alinhar os próximos passos!";
+            } else if (plano === 'robusto') {
+                message = "Olá, Rafael! Analisei a proposta do site da Cotta Beauty e decidi fechar o Plano 3: Robusto (R$ 2.800) para obtermos o mapeamento completo e o posicionamento local dominante. Vamos iniciar?";
+            }
 
-                <!-- Modelo 2: Intermediário -->
-                <div class="glass-card p-6 rounded-xl border border-zinc-800 space-y-4">
-                    <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">Estrutura 02</span>
-                    <h3 class="text-base font-bold text-white">Intermediário (Multi-Páginas + Blog)</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">
-                        Estruturação composta por Home Page institucional e até 5 páginas internas dedicadas para diferenciação geográfica (como páginas individuais por bairro/cidade), integrando um canal de blog estruturado para 3 artigos de autoridade.
-                    </p>
-                    <ul class="text-[11px] text-zinc-500 space-y-2 font-mono border-t border-zinc-800/60 pt-4">
-                        <li>• Landing Pages locais individuais por região</li>
-                        <li>• Canal de blog integrado para autoridade orgânica</li>
-                        <li>• Formulários avançados e mapeamento NAP</li>
-                    </ul>
-                </div>
-
-                <!-- Modelo 3: Robusto -->
-                <div class="glass-card p-6 rounded-xl border-2 border-brand-500/30 shadow-lg shadow-brand-500/5 space-y-4">
-                    <span class="text-[10px] font-mono text-brand-400 uppercase tracking-widest block font-bold">Estrutura 03</span>
-                    <h3 class="text-base font-bold text-white">Robusto (Mapeamento Completo de Palavras-Chave)</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">
-                        Ecossistema completo de alta escala com até 15 páginas internas. Cria uma malha de captura mapeando procedimentos/produtos específicos e cruzando diretamente com as localizações geográficas (SEO Cruzado), além de suporte recorrente ao blog.
-                    </p>
-                    <ul class="text-[11px] text-brand-300 space-y-2 font-mono border-t border-brand-500/20 pt-4">
-                        <li>• Cruzamento automatizado de termos técnicos</li>
-                        <li>• Páginas focadas em palavras de alta margem</li>
-                        <li>• Acompanhamento contínuo e atualização mensal</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção: Pilares RSA Digital -->
-        <section class="space-y-8">
-            <div class="text-center max-w-2xl mx-auto space-y-2">
-                <span class="text-xs font-mono tracking-widest text-brand-400 uppercase font-bold">Engenharia Web</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Nossas premissas de desenvolvimento</h2>
-                <p class="text-zinc-400 text-xs sm:text-sm">Todo projeto hospedado em nosso ambiente atende estritamente a padrões internacionais de indexação e velocidade.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Benefício 1 -->
-                <div class="glass-card p-6 rounded-xl border border-zinc-800 space-y-4">
-                    <div class="w-10 h-10 rounded bg-brand-500/10 flex items-center justify-center text-brand-400">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">SEO Local Inteligente</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">
-                        Estruturamos as páginas internas para serem lidas e priorizadas pelo robô do Google, indexando sua marca de forma assertiva nos principais bairros metropolitanos de atendimento.
-                    </p>
-                </div>
-
-                <!-- Benefício 2 -->
-                <div class="glass-card p-6 rounded-xl border border-zinc-800 space-y-4">
-                    <div class="w-10 h-10 rounded bg-brand-500/10 flex items-center justify-center text-brand-400">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    </div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Schema Markup Local</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">
-                        Inserção estruturada de dados ricos invisíveis no código, permitindo que mecanismos de busca compreendam instantaneamente sua localização, especialidades e informações de operação.
-                    </p>
-                </div>
-
-                <!-- Benefício 3 -->
-                <div class="glass-card p-6 rounded-xl border border-zinc-800 space-y-4">
-                    <div class="w-10 h-10 rounded bg-brand-500/10 flex items-center justify-center text-brand-400">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Performance de Elite (Core Web Vitals)</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed">
-                        Priorização máxima para velocidade de carregamento de páginas. Otimização fina de scripts e ativos para que a interface responda quase instantaneamente ao clique do usuário.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Rodapé Premium -->
-    <footer class="border-t border-zinc-900 bg-zinc-950/60 py-10 px-6 text-center">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded bg-zinc-900 flex items-center justify-center text-zinc-400 font-serif font-bold text-sm">
-                    RSA
-                </div>
-                <div class="text-left font-mono">
-                    <span class="text-white text-xs font-bold block">RSA Digital</span>
-                    <span class="text-[10px] text-zinc-500 block">&copy; 2026. Todos os direitos reservados.</span>
-                </div>
-            </div>
-
-            <p class="text-xs text-zinc-500 max-w-sm md:text-right font-mono">
-                Plataforma interna destinada à entrega de projetos e arquiteturas comerciais de internet.
-            </p>
-        </div>
-    </footer>
+            // Abre o WhatsApp numa nova aba
+            window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(message)}`, '_blank');
+            fecharModal();
+        }
+    </script>
 
 </body>
 </html>
