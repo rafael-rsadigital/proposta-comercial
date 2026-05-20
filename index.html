@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA Digital — Engenharia Web & SEO Local</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f7ff',
+                            100: '#ebf0ff',
+                            200: '#d1dcff',
+                            300: '#a3bcff',
+                            400: '#6e91ff',
+                            500: '#3b5eff',
+                            600: '#253fff',
+                            700: '#1c2ee6',
+                            800: '#1725be',
+                            900: '#142099',
+                            950: '#0a0f4d',
+                        },
+                        neon: {
+                            cyan: '#00f2fe',
+                            blue: '#4facfe',
+                            purple: '#7f00ff'
+                        },
+                        darkBg: '#090a0f',
+                        cardBg: '#11131e'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #090a0f;
+            color: #f4f4f7;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 94, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 242, 254, 0.05) 0%, transparent 40%);
+        }
+        .glass-card {
+            background: rgba(17, 19, 30, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- Barra de Navegação -->
+    <header class="sticky top-0 z-40 w-full glass-card border-b border-zinc-800/60 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <!-- Logotipo RSA Digital -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-brand-600 to-neon-cyan flex items-center justify-center shadow-lg shadow-brand-500/10">
+                    <span class="text-white font-extrabold text-lg tracking-wider">RSA</span>
+                </div>
+                <div>
+                    <span class="text-white font-bold tracking-wider text-base block font-mono">RSA DIGITAL</span>
+                    <span class="text-[10px] text-neon-cyan font-semibold tracking-widest uppercase font-mono">Estratégia & Tecnologia</span>
+                </div>
+            </div>
+            
+            <div class="text-[11px] font-mono text-zinc-500">
+                PROPOSTAS & AMBIENTES PRIVADOS
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-6xl w-full mx-auto px-4 py-16 space-y-20 flex-grow">
+
+        <!-- Seção Hero Simplificada e Corporativa -->
+        <section class="text-center max-w-3xl mx-auto space-y-6 py-8">
+            <span class="bg-brand-500/10 text-brand-400 border border-brand-500/20 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase inline-block font-mono">
+                Ambiente de Servidores Estáticos
+            </span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                Infraestrutura & Projetos de <span class="bg-gradient-to-r from-brand-400 via-neon-cyan to-neon-blue bg-clip-text text-transparent">Alta Performance</span>
+            </h1>
+            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                Este domínio é utilizado exclusivamente para a hospedagem, validação de arquivos e disponibilização de propostas comerciais personalizadas desenvolvidas pela equipe de engenharia da <strong class="text-zinc-200">RSA Digital</strong>.
+            </p>
+        </section>
+
+        <!-- Seção: Opções de Arquiteturas de Sites (Sem Preços, Sem CTAs) -->
+        <section class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="text-xs font-mono tracking-widest text-brand-400 uppercase font-bold">Nossas Arquiteturas</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Modelos Estruturais de Sites</h2>
+                <p class="text-zinc-400 text-xs sm:text-sm">Desenvolvemos três padrões de layouts planejados para a melhor distribuição de informações e SEO.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Modelo 1: One Page -->
+                <div class="glass-card p-6 rounded-xl border border-zinc-800 space-y-4">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">Estrutura 01</span>
+                    <h3 class="text-base font-bold text-white">One Page (Página Única)</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Toda a experiência de conversão, informações institucionais, galeria e contato concentrados em uma única página longa com carregamento sequencial. Ideal para validação de serviços em uma única região geográfica.
+                    </p>
+                    <ul class="text-[11px] text-zinc-500 space-y-2 font-mono border-t border-zinc-800/60 pt-4">
+                        <li>• Navegação integrada por âncoras</li>
+                        <li>• Seção de conversão e contato unificada</li>
+                        <li>• Ideal para campanhas de tráfego direto</li>
+                    </ul>
+                </div>
+
+                <!-- Modelo 2: Intermediário -->
+                <div class="glass-card p-6 rounded-xl border border-zinc-800 space-y-4">
+                    <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block font-bold">Estrutura 02</span>
+                    <h3 class="text-base font-bold text-white">Intermediário (Multi-Páginas + Blog)</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Estruturação composta por Home Page institucional e até 5 páginas internas dedicadas para diferenciação geográfica (como páginas individuais por bairro/cidade), integrando um canal de blog estruturado para 3 artigos de autoridade.
+                    </p>
+                    <ul class="text-[11px] text-zinc-500 space-y-2 font-mono border-t border-zinc-800/60 pt-4">
+                        <li>• Landing Pages locais individuais por região</li>
+                        <li>• Canal de blog integrado para autoridade orgânica</li>
+                        <li>• Formulários avançados e mapeamento NAP</li>
+                    </ul>
+                </div>
+
+                <!-- Modelo 3: Robusto -->
+                <div class="glass-card p-6 rounded-xl border-2 border-brand-500/30 shadow-lg shadow-brand-500/5 space-y-4">
+                    <span class="text-[10px] font-mono text-brand-400 uppercase tracking-widest block font-bold">Estrutura 03</span>
+                    <h3 class="text-base font-bold text-white">Robusto (Mapeamento Completo de Palavras-Chave)</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Ecossistema completo de alta escala com até 15 páginas internas. Cria uma malha de captura mapeando procedimentos/produtos específicos e cruzando diretamente com as localizações geográficas (SEO Cruzado), além de suporte recorrente ao blog.
+                    </p>
+                    <ul class="text-[11px] text-brand-300 space-y-2 font-mono border-t border-brand-500/20 pt-4">
+                        <li>• Cruzamento automatizado de termos técnicos</li>
+                        <li>• Páginas focadas em palavras de alta margem</li>
+                        <li>• Acompanhamento contínuo e atualização mensal</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Pilares RSA Digital -->
+        <section class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <span class="text-xs font-mono tracking-widest text-brand-400 uppercase font-bold">Engenharia Web</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Nossas premissas de desenvolvimento</h2>
+                <p class="text-zinc-400 text-xs sm:text-sm">Todo projeto hospedado em nosso ambiente atende estritamente a padrões internacionais de indexação e velocidade.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Benefício 1 -->
+                <div class="glass-card p-6 rounded-xl border border-zinc-800 space-y-4">
+                    <div class="w-10 h-10 rounded bg-brand-500/10 flex items-center justify-center text-brand-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">SEO Local Inteligente</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Estruturamos as páginas internas para serem lidas e priorizadas pelo robô do Google, indexando sua marca de forma assertiva nos principais bairros metropolitanos de atendimento.
+                    </p>
+                </div>
+
+                <!-- Benefício 2 -->
+                <div class="glass-card p-6 rounded-xl border border-zinc-800 space-y-4">
+                    <div class="w-10 h-10 rounded bg-brand-500/10 flex items-center justify-center text-brand-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Schema Markup Local</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Inserção estruturada de dados ricos invisíveis no código, permitindo que mecanismos de busca compreendam instantaneamente sua localização, especialidades e informações de operação.
+                    </p>
+                </div>
+
+                <!-- Benefício 3 -->
+                <div class="glass-card p-6 rounded-xl border border-zinc-800 space-y-4">
+                    <div class="w-10 h-10 rounded bg-brand-500/10 flex items-center justify-center text-brand-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider">Performance de Elite (Core Web Vitals)</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">
+                        Priorização máxima para velocidade de carregamento de páginas. Otimização fina de scripts e ativos para que a interface responda quase instantaneamente ao clique do usuário.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé Premium -->
+    <footer class="border-t border-zinc-900 bg-zinc-950/60 py-10 px-6 text-center">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded bg-zinc-900 flex items-center justify-center text-zinc-400 font-serif font-bold text-sm">
+                    RSA
+                </div>
+                <div class="text-left font-mono">
+                    <span class="text-white text-xs font-bold block">RSA Digital</span>
+                    <span class="text-[10px] text-zinc-500 block">&copy; 2026. Todos os direitos reservados.</span>
+                </div>
+            </div>
+
+            <p class="text-xs text-zinc-500 max-w-sm md:text-right font-mono">
+                Plataforma interna destinada à entrega de projetos e arquiteturas comerciais de internet.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
